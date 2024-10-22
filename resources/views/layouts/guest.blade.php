@@ -14,16 +14,16 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class=" font-sans text-gray-900 antialiased">
         <!-- Principal -->
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-300 dark:bg-gray-600">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-300 dark:bg-gray-500">
             <div>
                 
                     <x-application-logo class="w-20 h-20 fill-current text-gray-900" />
                 
             </div>
             <!-- Formato del cuadro login -->
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-gray-400 dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            <div style="width: 90%;" class="  bg-gray-400 dark:bg-gray-500 shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>

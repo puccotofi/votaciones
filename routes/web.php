@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EncuestaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicioController;
@@ -24,7 +25,10 @@ Route::middleware('auth')->group(function () {
 
 // Ruta del Raiz
 //Route::get('/',[VotacionesController::class,'index'])->name('votar.index');
-Route::get('/',[ServicioController::class,'index'])->middleware(['auth', 'verified'])->name('servicios.index');
+Route::get('/',[EncuestaController::class,'index'])->name('encuestar.index');
+Route::post('/encuestar',[EncuestaController::class,'store'])->name('encuestar.store');
+Route::get('/encuestado',[EncuestaController::class,'completa'])->name('encuesta.completa');
+//Route::get('/',[ServicioController::class,'index'])->middleware(['auth', 'verified'])->name('servicios.index');
 // Rutas de servicios
 Route::get('/dashboard',[ServicioController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/servicio_crear',[ServicioController::class,'create'])->middleware(['auth', 'verified'])->name('servicios.create');
